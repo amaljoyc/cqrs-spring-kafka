@@ -1,4 +1,4 @@
-version: "2"
+version: '2.2'
 
 services:
   sink:
@@ -6,7 +6,7 @@ services:
     ports:
       - 8081:8081
     links:
-      - mysql
+      - db
       - kafka
 
   source:
@@ -14,17 +14,17 @@ services:
     ports:
       - 8080:8080
     links:
-      - mysql
+      - db
       - kafka
 
-  mysql:
-      image: mysql
-      ports:
-       - 3306:3306
-      environment:
-       - MYSQL_ROOT_PASSWORD=root
-       - MYSQL_USER=myuser
-       - MYSQL_PASSWORD=mypwd
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypwd
+      - POSTGRES_DB=mydb
 
   zookeeper:
     image: confluent/zookeeper

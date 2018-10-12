@@ -10,5 +10,5 @@ Spring boot app using DDD, CQRS, Kafka etc
 * Spring Data JPA
 * Maven
 * Kafka
-* MySQL
+* Postgresql
 * Docker Compose
