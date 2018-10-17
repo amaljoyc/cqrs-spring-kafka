@@ -12,3 +12,12 @@ Spring boot app using DDD, CQRS, Kafka etc
 * Kafka
 * Postgresql
 * Docker Compose
+
+#### to build individual service,
+    ./mvnw clean package
+
+#### to build and run all the services,
+    docker-compose up --build
+    
+#### to kill all the running services,
+    docker-compose rm -v
